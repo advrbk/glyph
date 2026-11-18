@@ -1,0 +1,5 @@
+syntax error: invalid assignment target
+ --> tests/errors/syntax-assign-target.gly:2:7
+  |
+2 | a + 1 = 3
+  |       ^

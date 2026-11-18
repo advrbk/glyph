@@ -1,0 +1,5 @@
+runtime error: assertion failed: length check
+ --> tests/errors/runtime-assert.gly:2:7
+  |
+2 | assert(len("abc") == 4, "length check")
+  |       ^

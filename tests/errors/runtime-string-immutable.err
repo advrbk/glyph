@@ -1,0 +1,5 @@
+runtime error: strings cannot be changed; build a new one with ++
+ --> tests/errors/runtime-string-immutable.gly:2:2
+  |
+2 | s[0] = "x"
+  |  ^

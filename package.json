@@ -1,0 +1,29 @@
+{
+  "name": "glyph-lang",
+  "private": true,
+  "version": "0.1.0",
+  "description": "A small scripting language with a bytecode VM, a tree-walking reference interpreter and differential fuzzing",
+  "license": "MIT",
+  "author": "Rayano Smith",
+  "type": "module",
+  "bin": {
+    "glyph": "dist/glyph.js"
+  },
+  "scripts": {
+    "glyph": "tsx src/cli.ts",
+    "build": "tsx scripts/build.ts",
+    "test": "vitest run",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "fuzz": "node --stack-size=4000 --import tsx scripts/fuzz.ts",
+    "mutation-check": "tsx scripts/mutation-check.ts",
+    "bench": "node --stack-size=4000 --import tsx scripts/bench.ts",
+    "check": "npm run typecheck && npm test"
+  },
+  "devDependencies": {
+    "@types/node": "^24.19.2",
+    "esbuild": "^0.28.2",
+    "tsx": "^4.23.15",
+    "typescript": "5.9",
+    "vitest": "3.2"
+  }
+}

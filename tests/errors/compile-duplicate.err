@@ -1,0 +1,5 @@
+compile error: 'x' is already declared in this scope
+ --> tests/errors/compile-duplicate.gly:2:5
+  |
+2 | let x = 2
+  |     ^

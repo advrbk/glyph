@@ -1,0 +1,5 @@
+runtime error: cannot loop over a number
+ --> tests/errors/runtime-loop-over-number.gly:1:1
+  |
+1 | for x in 42 {
+  | ^

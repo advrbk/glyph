@@ -1,0 +1,5 @@
+runtime error: 'width' was used before its definition ran
+ --> tests/errors/runtime-forward-reference.gly:1:14
+  |
+1 | fn area() => width * 2
+  |              ^

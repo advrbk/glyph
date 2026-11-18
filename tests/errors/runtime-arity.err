@@ -1,0 +1,5 @@
+runtime error: function 'add' expects 2 arguments, got 1
+ --> tests/errors/runtime-arity.gly:2:10
+  |
+2 | print(add(1))
+  |          ^

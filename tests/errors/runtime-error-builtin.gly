@@ -1,0 +1,6 @@
+fn check(age) {
+  if age < 0 { error("age cannot be negative: {age}") }
+  age
+}
+print(check(30))
+print(check(-1))

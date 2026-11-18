@@ -1,0 +1,11 @@
+passed: [72, 95, 88, 100]
+curved: [77, 100, 93, 100]
+average: 92.5
+{title: "Dune", year: 1965, tags: ["sci-fi", "classic", "desert"], pages: 412}
+keys: ["title", "year", "tags", "pages"] has isbn: false
+isbn: nil
+the: 3
+cat: 1
+and: 2
+hat: 1
+bat: 1

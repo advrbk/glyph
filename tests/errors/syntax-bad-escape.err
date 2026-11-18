@@ -1,0 +1,5 @@
+syntax error: invalid escape sequence '\q'
+ --> tests/errors/syntax-bad-escape.gly:1:11
+  |
+1 | print("tab\q")
+  |           ^

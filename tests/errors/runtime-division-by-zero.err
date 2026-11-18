@@ -1,0 +1,6 @@
+0.5
+runtime error: division by zero
+ --> tests/errors/runtime-division-by-zero.gly:1:21
+  |
+1 | fn ratio(a, b) => a / b
+  |                     ^

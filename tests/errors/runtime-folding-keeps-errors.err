@@ -1,0 +1,6 @@
+before
+runtime error: division by zero
+ --> tests/errors/runtime-folding-keeps-errors.gly:3:10
+  |
+3 | print(10 / ZERO)
+  |          ^

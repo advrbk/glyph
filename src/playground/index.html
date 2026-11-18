@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Glyph Playground</title>
+  <meta name="description" content="Write and run Glyph programs in the browser, read the bytecode, and step through the virtual machine.">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="top">
+    <div class="brand">
+      <span class="mark" aria-hidden="true">G</span>
+      <div>
+        <h1>Glyph</h1>
+        <p>a small language with a bytecode VM</p>
+      </div>
+    </div>
+    <div class="controls">
+      <label class="field">
+        <span>Example</span>
+        <select id="examples" aria-label="Example program"></select>
+      </label>
+      <label class="field">
+        <span>Engine</span>
+        <select id="engine" aria-label="Engine">
+          <option value="vm">Bytecode VM</option>
+          <option value="tree">Tree-walker</option>
+        </select>
+      </label>
+      <label class="check"><input type="checkbox" id="fold" checked> Constant folding</label>
+    </div>
+  </header>
+
+  <div class="toolbar" role="toolbar" aria-label="Run controls">
+    <button id="run" class="primary" title="Run (Ctrl+Enter)">Run</button>
+    <span class="sep" aria-hidden="true"></span>
+    <button id="debug" title="Start stepping through the VM">Debug</button>
+    <button id="step" disabled title="Execute one instruction">Step</button>
+    <button id="step10" disabled title="Execute ten instructions">Step 10</button>
+    <button id="line" disabled title="Run until the source line changes">Next line</button>
+    <button id="continue" disabled title="Run to the end">Continue</button>
+    <button id="stop" disabled title="Stop">Stop</button>
+    <span id="status" class="status" role="status">Ready</span>
+  </div>
+
+  <main class="layout">
+    <section class="card editor-card" aria-label="Editor">
+      <div class="card-head"><span>main.gly</span><span class="hint">Ctrl+Enter runs</span></div>
+      <div class="editor">
+        <pre class="gutter" id="gutter" aria-hidden="true"></pre>
+        <div class="code-wrap">
+          <div class="line-mark" id="lineMark" hidden></div>
+          <textarea id="code" spellcheck="false" autocapitalize="off" autocomplete="off" aria-label="Glyph source code"></textarea>
+        </div>
+      </div>
+    </section>
+
+    <section class="card side-card" aria-label="Results">
+      <div class="tabs" role="tablist">
+        <button role="tab" class="tab active" data-tab="output" aria-selected="true">Output</button>
+        <button role="tab" class="tab" data-tab="bytecode" aria-selected="false">Bytecode</button>
+        <button role="tab" class="tab" data-tab="debugger" aria-selected="false">VM state</button>
+      </div>
+      <div class="panel" data-panel="output">
+        <pre id="output" class="output"></pre>
+      </div>
+      <div class="panel" data-panel="bytecode" hidden>
+        <pre id="bytecode" class="listing"></pre>
+      </div>
+      <div class="panel debug" data-panel="debugger" hidden>
+        <div id="debugEmpty" class="empty">Press <b>Debug</b> to step through the program one instruction at a time.</div>
+        <div id="debugView" class="debug-grid" hidden>
+          <div class="debug-col">
+            <h2>Next instruction <span id="fnName" class="pill"></span></h2>
+            <pre id="fnListing" class="listing small"></pre>
+          </div>
+          <div class="debug-col">
+            <h2>Frames</h2>
+            <ol id="frames" class="frames"></ol>
+            <h2>Stack <span class="muted">(top first)</span></h2>
+            <ol id="stack" class="stack"></ol>
+            <h2>Output so far</h2>
+            <pre id="debugOutput" class="output small"></pre>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="foot">
+    <span>Glyph: lexer, Pratt parser, resolver, constant folder, bytecode compiler and stack VM, all in TypeScript. Runs entirely in this page.</span>
+  </footer>
+  <script src="app.js"></script>
+</body>
+</html>

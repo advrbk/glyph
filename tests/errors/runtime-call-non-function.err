@@ -1,0 +1,5 @@
+runtime error: cannot call a number
+ --> tests/errors/runtime-call-non-function.gly:2:2
+  |
+2 | x(1)
+  |  ^

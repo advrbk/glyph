@@ -1,0 +1,36 @@
+# Quicksort and insertion sort, checked against each other.
+fn quicksort(xs) {
+  if len(xs) <= 1 { return xs }
+  let pivot = xs[0]
+  let rest = slice(xs, 1, len(xs))
+  quicksort(filter(rest, fn(x) => x < pivot)) ++ [pivot] ++ quicksort(filter(rest, fn(x) => x >= pivot))
+}
+
+fn insertionSort(xs) {
+  let a = slice(xs, 0, len(xs))
+  for i in 1..len(a) {
+    let j = i
+    while j > 0 and a[j - 1] > a[j] {
+      let t = a[j]
+      a[j] = a[j - 1]
+      a[j - 1] = t
+      j -= 1
+    }
+  }
+  a
+}
+
+# A small linear congruential generator, so the data is the same every run.
+let seed = 42
+fn rand(n) {
+  seed = (seed * 75 + 74) % 65537
+  seed % n
+}
+
+let data = map(0..15, fn(i) => rand(100))
+print("data:     ", data)
+print("quick:    ", quicksort(data))
+print("insertion:", insertionSort(data))
+# == on arrays compares identity (are they the same array?), so compare the text.
+print("same array:", quicksort(data) == insertionSort(data))
+print("same order:", str(quicksort(data)) == str(insertionSort(data)))

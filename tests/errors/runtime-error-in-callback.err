@@ -1,0 +1,5 @@
+runtime error: cannot apply '*' to string and number
+ --> tests/errors/runtime-error-in-callback.gly:2:26
+  |
+2 | print(map(xs, fn(x) => x * 2))
+  |                          ^

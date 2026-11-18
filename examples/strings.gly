@@ -1,0 +1,26 @@
+# Building and slicing strings.
+fn repeat(s, n) {
+  let out = ""
+  for i in 0..n { out ++= s }
+  out
+}
+
+fn reverse(s) {
+  let out = ""
+  for c in s { out = c ++ out }
+  out
+}
+
+fn isPalindrome(s) => s == reverse(s)
+
+print(repeat("ab", 3), reverse("glyph"))
+for w in ["level", "glyph", "racecar"] {
+  print("{w}: {isPalindrome(w)}")
+}
+
+let csv = "name,lang,year"
+let parts = split(csv, ",")
+print(parts, len(parts), join(parts, " | "))
+print(slice("interpreter", 5, 11), "interpreter"[0])
+print("braces need a backslash: \{x\}, quotes too: \"ok\"")
+print("number from text:", num("41.5") + 0.5, num("abc"))

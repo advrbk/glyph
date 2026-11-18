@@ -1,0 +1,3 @@
+fn area() => width * 2
+print(area())
+let width = 5

@@ -1,0 +1,6 @@
+30
+runtime error: age cannot be negative: -1
+ --> tests/errors/runtime-error-builtin.gly:2:21
+  |
+2 |   if age < 0 { error("age cannot be negative: {age}") }
+  |                     ^

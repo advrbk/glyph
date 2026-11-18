@@ -1,0 +1,8 @@
+ababab hpylg
+level: true
+glyph: false
+racecar: true
+["name", "lang", "year"] 3 name | lang | year
+preter i
+braces need a backslash: {x}, quotes too: "ok"
+number from text: 42 nil

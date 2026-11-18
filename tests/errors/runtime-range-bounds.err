@@ -1,0 +1,5 @@
+runtime error: range end must be an integer, got 2.5
+ --> tests/errors/runtime-range-bounds.gly:1:8
+  |
+1 | print(0..2.5)
+  |        ^

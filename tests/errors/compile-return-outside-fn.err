@@ -1,0 +1,5 @@
+compile error: 'return' outside a function
+ --> tests/errors/compile-return-outside-fn.gly:1:1
+  |
+1 | return 5
+  | ^

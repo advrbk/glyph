@@ -1,0 +1,36 @@
+# if/else, while, for, break/continue, and blocks as expressions.
+fn classify(n) => if n < 0 { "negative" } else if n == 0 { "zero" } else { "positive" }
+print(classify(-3), classify(0), classify(7))
+
+let i = 0
+let evens = []
+while true {
+  i += 1
+  if i > 10 { break }
+  if i % 2 == 1 { continue }
+  push(evens, i)
+}
+print("evens:", evens)
+
+let area = do {
+  let w = 3
+  let h = 4
+  w * h
+}
+print("area:", area)
+
+for row in 1..=3 {
+  let line = ""
+  for col in 1..=3 {
+    line ++= str(row * col) ++ " "
+  }
+  print(line)
+}
+
+fn firstOver(xs, limit) {
+  for x in xs {
+    if x > limit { return x }
+  }
+  nil
+}
+print(firstOver([3, 8, 12, 20], 10), firstOver([1, 2], 5))

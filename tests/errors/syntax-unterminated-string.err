@@ -1,0 +1,5 @@
+syntax error: unterminated string
+ --> tests/errors/syntax-unterminated-string.gly:1:16
+  |
+1 | let greeting = "hello
+  |                ^

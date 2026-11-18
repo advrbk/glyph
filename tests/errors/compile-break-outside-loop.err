@@ -1,0 +1,5 @@
+compile error: 'break' outside a loop
+ --> tests/errors/compile-break-outside-loop.gly:2:3
+  |
+2 |   break
+  |   ^

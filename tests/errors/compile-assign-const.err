@@ -1,0 +1,5 @@
+compile error: cannot assign to constant 'pi'
+ --> tests/errors/compile-assign-const.gly:2:1
+  |
+2 | pi = 3
+  | ^

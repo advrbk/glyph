@@ -1,0 +1,2 @@
+let xs = [1, 2, "three", 4]
+print(map(xs, fn(x) => x * 2))

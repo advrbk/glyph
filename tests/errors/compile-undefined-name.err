@@ -1,0 +1,5 @@
+compile error: undefined name 'totl'
+ --> tests/errors/compile-undefined-name.gly:2:7
+  |
+2 | print(totl)
+  |       ^

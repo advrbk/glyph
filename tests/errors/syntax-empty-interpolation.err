@@ -1,0 +1,5 @@
+syntax error: empty interpolation; put an expression between { and }
+ --> tests/errors/syntax-empty-interpolation.gly:1:16
+  |
+1 | print("value: {}")
+  |                ^

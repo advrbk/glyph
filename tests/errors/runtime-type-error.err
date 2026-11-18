@@ -1,0 +1,5 @@
+runtime error: cannot apply '+' to string and number (use ++ to join strings)
+ --> tests/errors/runtime-type-error.gly:2:17
+  |
+2 | print("count: " + count)
+  |                 ^

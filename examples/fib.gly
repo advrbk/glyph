@@ -1,0 +1,19 @@
+# Recursion, and the same function written as a loop.
+fn fib(n) => if n < 2 { n } else { fib(n - 1) + fib(n - 2) }
+
+fn fibLoop(n) {
+  let a = 0
+  let b = 1
+  for i in 0..n {
+    let next = a + b
+    a = b
+    b = next
+  }
+  a
+}
+
+for n in [0, 1, 2, 10, 20] {
+  print("fib({n}) = {fib(n)}")
+}
+print("fibLoop(70) = {fibLoop(70)}")
+print(map(0..=12, fibLoop))

@@ -1,0 +1,13 @@
+# Nested loops and arithmetic on locals: one million inner iterations.
+fn grid(n) {
+  let total = 0
+  for i in 0..n {
+    let j = 0
+    while j < n {
+      total += (i * j) % 7
+      j += 1
+    }
+  }
+  total
+}
+print(grid(1000))

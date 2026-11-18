@@ -1,0 +1,4 @@
+fn f(x) {
+  if x > 1 {
+    print(x)
+}

@@ -1,0 +1,5 @@
+compile error: duplicate parameter 'a'
+ --> tests/errors/compile-duplicate-param.gly:1:12
+  |
+1 | fn f(a, b, a) => a
+  |            ^

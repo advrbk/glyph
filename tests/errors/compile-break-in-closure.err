@@ -1,0 +1,5 @@
+compile error: 'continue' outside a loop
+ --> tests/errors/compile-break-in-closure.gly:2:18
+  |
+2 |   let f = fn() { continue }
+  |                  ^

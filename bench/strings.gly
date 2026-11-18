@@ -1,0 +1,15 @@
+# String building: interpolation, ++= and indexing.
+fn build(n) {
+  let s = ""
+  for i in 0..n {
+    s ++= "{i % 10}"
+    if i % 1000 == 0 { s ++= "|" }
+  }
+  s
+}
+let text = build(200000)
+let bars = 0
+for i in 0..len(text) {
+  if text[i] == "|" { bars += 1 }
+}
+print(len(text), bars)

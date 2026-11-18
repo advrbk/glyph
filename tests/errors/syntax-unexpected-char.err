@@ -1,0 +1,5 @@
+syntax error: unexpected character '@'
+ --> tests/errors/syntax-unexpected-char.gly:1:11
+  |
+1 | let a = 3 @ 4
+  |           ^

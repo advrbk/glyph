@@ -1,0 +1,13 @@
+# The basics: values, let/const, string interpolation.
+const name = "Glyph"
+let version = 1
+version += 0.5
+
+print("Hello from {name} {version}!")
+print("2 + 3 * 4 =", 2 + 3 * 4)
+print("types:", type(42), type("hi"), type(true), type(nil), type([1]), type({a: 1}), type(print))
+
+# Only false and nil are falsy.
+for v in [0, "", [], false, nil] {
+  print(if v { "truthy:" } else { "falsy: " }, [v])
+}

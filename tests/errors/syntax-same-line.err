@@ -1,0 +1,5 @@
+syntax error: expected a new line or ';' before 'let'
+ --> tests/errors/syntax-same-line.gly:1:11
+  |
+1 | let a = 1 let b = 2
+  |           ^

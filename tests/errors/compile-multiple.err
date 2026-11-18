@@ -1,0 +1,15 @@
+compile error: undefined name 'a'
+ --> tests/errors/compile-multiple.gly:1:7
+  |
+1 | print(a)
+  |       ^
+compile error: cannot assign to constant 'k'
+ --> tests/errors/compile-multiple.gly:3:1
+  |
+3 | k = 2
+  | ^
+compile error: undefined name 'b'
+ --> tests/errors/compile-multiple.gly:4:7
+  |
+4 | print(b)
+  |       ^

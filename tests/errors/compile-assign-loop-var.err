@@ -1,0 +1,5 @@
+compile error: cannot assign to loop variable 'i'
+ --> tests/errors/compile-assign-loop-var.gly:2:3
+  |
+2 |   i = 10
+  |   ^

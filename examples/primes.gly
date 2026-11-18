@@ -1,0 +1,26 @@
+# Sieve of Eratosthenes.
+fn primesBelow(n) {
+  let isPrime = map(0..n, fn(i) => i >= 2)
+  for i in 2..n {
+    if isPrime[i] and i * i < n {
+      let j = i * i
+      while j < n {
+        isPrime[j] = false
+        j += i
+      }
+    }
+  }
+  filter(0..n, fn(i) => isPrime[i])
+}
+
+fn contains(xs, v) {
+  for x in xs {
+    if x == v { return true }
+  }
+  false
+}
+
+let ps = primesBelow(100)
+print(len(ps), "primes below 100")
+print(ps)
+print("twin primes:", filter(ps, fn(p) => p + 2 < 100 and contains(ps, p + 2)))

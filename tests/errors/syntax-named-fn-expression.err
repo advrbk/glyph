@@ -1,0 +1,5 @@
+syntax error: a named function must be a statement; write 'fn(...)' for a function value
+ --> tests/errors/syntax-named-fn-expression.gly:1:12
+  |
+1 | let f = fn square(x) => x * x
+  |            ^

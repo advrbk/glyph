@@ -1,0 +1,5 @@
+runtime error: function expects 1 argument, got 2
+ --> tests/errors/runtime-callback-arity.gly:1:13
+  |
+1 | print(reduce([1, 2], fn(x) => x, 0))
+  |             ^

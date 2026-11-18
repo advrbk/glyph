@@ -1,0 +1,5 @@
+compile error: cannot use 'limit' before its definition
+ --> tests/errors/compile-use-before-definition.gly:1:7
+  |
+1 | print(limit)
+  |       ^

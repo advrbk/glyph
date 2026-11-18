@@ -1,0 +1,5 @@
+syntax error: this '{' is never closed (reached the end of input)
+ --> tests/errors/syntax-missing-brace.gly:1:9
+  |
+1 | fn f(x) {
+  |         ^

@@ -1,0 +1,5 @@
+runtime error: stack overflow (more than 1000 nested calls)
+ --> tests/errors/runtime-stack-overflow.gly:1:25
+  |
+1 | fn forever(n) => forever(n + 1)
+  |                         ^

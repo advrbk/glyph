@@ -1,0 +1,24 @@
+# Constant folding: a bouncing ball written with named constants. Without
+# folding every step re-reads the globals and recomputes the products.
+const G = 9.81
+const STEPS_PER_SECOND = 240
+const DT = 1 / STEPS_PER_SECOND
+const HALF_DT_SQUARED = 0.5 * DT * DT
+const DAMPING = 1 - 0.0005
+const BOUNCE = 0.9
+
+let y = 100
+let v = 0
+let bounces = 0
+let step = 0
+while step < 300000 {
+  v = (v - G * DT) * DAMPING
+  y = y + v * DT - G * HALF_DT_SQUARED
+  if y < 0 {
+    y = -y
+    v = -v * BOUNCE
+    bounces += 1
+  }
+  step += 1
+}
+print(bounces, floor(y * 1000) / 1000)

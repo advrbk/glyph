@@ -1,0 +1,5 @@
+compile error: cannot assign to builtin 'print'
+ --> tests/errors/compile-assign-builtin.gly:1:1
+  |
+1 | print = 5
+  | ^

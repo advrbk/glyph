@@ -1,0 +1,4 @@
+print(a)
+const k = 1
+k = 2
+print(b)

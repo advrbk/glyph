@@ -1,0 +1,19 @@
+# Functions can call functions declared later in the same block.
+fn isEven(n) => if n == 0 { true } else { isOdd(n - 1) }
+fn isOdd(n) => if n == 0 { false } else { isEven(n - 1) }
+
+print(map([0, 1, 7, 10], isEven))
+
+# The same works for local functions inside another function.
+fn collatz(start) {
+  fn step(n) => if n % 2 == 0 { half(n) } else { 3 * n + 1 }
+  fn half(n) => n / 2
+  let n = start
+  let steps = 0
+  while n != 1 {
+    n = step(n)
+    steps += 1
+  }
+  steps
+}
+print("collatz steps:", map([1, 6, 7, 27], collatz))

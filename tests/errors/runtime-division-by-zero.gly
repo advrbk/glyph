@@ -1,0 +1,3 @@
+fn ratio(a, b) => a / b
+print(ratio(1, 2))
+print(ratio(1, 0))

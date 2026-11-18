@@ -1,0 +1,5 @@
+runtime error: map has no key 'age'
+ --> tests/errors/runtime-missing-key.gly:2:12
+  |
+2 | print(user.age)
+  |            ^

@@ -1,0 +1,5 @@
+compile error: cannot use 'x' before its definition
+ --> tests/errors/compile-self-init.gly:3:11
+  |
+3 |   let x = x + 1
+  |           ^

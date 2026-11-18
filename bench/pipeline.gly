@@ -1,0 +1,9 @@
+# map / filter / reduce with small lambdas: most of the time is spent in the
+# builtins calling back into Glyph code.
+let xs = map(0..1000, fn(i) => i)
+let total = 0
+for round in 0..150 {
+  let ys = xs |> map(fn(x) => x + round) |> filter(fn(x) => x % 3 == 0)
+  total += reduce(ys, fn(acc, y) => acc + y, 0)
+}
+print(total)

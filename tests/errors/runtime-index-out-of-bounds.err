@@ -1,0 +1,5 @@
+runtime error: index 3 is out of bounds (length 3)
+ --> tests/errors/runtime-index-out-of-bounds.gly:2:9
+  |
+2 | print(xs[3])
+  |         ^

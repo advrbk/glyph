@@ -1,0 +1,5 @@
+runtime error: len expects 1 argument, got 0
+ --> tests/errors/runtime-builtin-args.gly:1:10
+  |
+1 | print(len())
+  |          ^

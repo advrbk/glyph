@@ -1,0 +1,21 @@
+# Closures: creating them, and calling through captured variables.
+fn counter() {
+  let n = 0
+  fn() {
+    n += 1
+    n
+  }
+}
+
+fn adder(k) => fn(x) => x + k
+fn compose(f, g) => fn(x) => f(g(x))
+
+let total = 0
+for round in 0..200 {
+  const tick = counter()
+  const add = compose(adder(round), adder(1))
+  for i in 0..1000 {
+    total += add(i) % 7 + tick() % 2
+  }
+}
+print(total)

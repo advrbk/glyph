@@ -1,0 +1,26 @@
+# Arrays, maps and the pipe operator.
+let scores = [72, 95, 58, 88, 100, 64]
+
+let passed = scores |> filter(fn(s) => s >= 65)
+let curved = passed |> map(fn(s) => min(s + 5, 100))
+let total = reduce(curved, fn(acc, s) => acc + s, 0)
+
+print("passed:", passed)
+print("curved:", curved)
+print("average:", total / len(curved))
+
+let book = {title: "Dune", year: 1965, tags: ["sci-fi", "classic"]}
+book.pages = 412
+book["year"] += 0
+push(book.tags, "desert")
+print(book)
+print("keys:", keys(book), "has isbn:", has(book, "isbn"))
+print("isbn:", book["isbn"])
+
+let counts = {}
+for word in split("the cat and the hat and the bat", " ") {
+  counts[word] = (counts[word] or 0) + 1
+}
+for k in counts {
+  print("{k}: {counts[k]}")
+}
